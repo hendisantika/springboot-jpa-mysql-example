@@ -57,6 +57,16 @@ public class UserController {
     public List<User> getAllUser() {
         List<User> tasks = userService.getUser();
         return tasks;
+    }
 
+    @PutMapping(value = "/update", headers = "Accept=application/json")
+    public ResponseEntity<String> updateUser(@RequestBody User currentUser) {
+        System.out.println("sd");
+        Optional<User> user = userService.findById(currentUser.getId());
+        if (!user.isPresent()) {
+            return new ResponseEntity<String>(HttpStatus.NOT_FOUND);
+        }
+        userService.update(currentUser, currentUser.getId());
+        return new ResponseEntity<String>(HttpStatus.OK);
     }
 }
