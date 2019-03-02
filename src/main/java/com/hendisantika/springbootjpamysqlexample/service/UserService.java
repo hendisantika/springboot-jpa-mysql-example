@@ -3,6 +3,7 @@ package com.hendisantika.springbootjpamysqlexample.service;
 import com.hendisantika.springbootjpamysqlexample.entity.User;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by IntelliJ IDEA.
@@ -18,7 +19,7 @@ public interface UserService {
 
     List<User> getUser();
 
-    User findById(long id);
+    Optional<User> findById(long id);
 
     User update(User user, long l);
 
