@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -50,5 +51,12 @@ public class UserController {
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(ucBuilder.path("/user/{id}").buildAndExpand(user.getId()).toUri());
         return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
+    }
+
+    @GetMapping(value = "/get", headers = "Accept=application/json")
+    public List<User> getAllUser() {
+        List<User> tasks = userService.getUser();
+        return tasks;
+
     }
 }
