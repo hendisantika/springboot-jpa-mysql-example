@@ -60,6 +60,7 @@ public class UserServiceImp implements UserService {
 //        return userRepository.save(usr);
         return userRepository.findById(id)
                 .map(user1 -> {
+                    user1.setName(user.getName());
                     user1.setCountry(user.getCountry());
                     return userRepository.save(user1);
                 }).orElseThrow(() -> new ResourceNotFoundException("User not found with id " + id));

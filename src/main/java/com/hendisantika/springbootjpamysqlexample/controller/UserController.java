@@ -25,7 +25,7 @@ import java.util.Optional;
  * Time: 19:51
  */
 @RestController
-@RequestMapping(value = {"/user"})
+@RequestMapping(value = {"/users"})
 public class UserController {
     private static Logger logger = LogManager.getLogger(UserController.class);
 
