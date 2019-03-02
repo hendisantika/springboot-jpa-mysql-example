@@ -32,6 +32,12 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    @GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<User> getAllUsers() {
+        logger.info("Fetching All Users ...");
+        return userService.getUser();
+    }
+
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<User> getUserById(@PathVariable("id") long id) {
         logger.info("Fetching User with id " + id);
