@@ -61,12 +61,22 @@ public class UserController {
 
     @PutMapping(value = "/update", headers = "Accept=application/json")
     public ResponseEntity<String> updateUser(@RequestBody User currentUser) {
-        System.out.println("sd");
+        logger.info("Update data user ....");
         Optional<User> user = userService.findById(currentUser.getId());
         if (!user.isPresent()) {
             return new ResponseEntity<String>(HttpStatus.NOT_FOUND);
         }
         userService.update(currentUser, currentUser.getId());
         return new ResponseEntity<String>(HttpStatus.OK);
+    }
+
+    @DeleteMapping(value = "/{id}", headers = "Accept=application/json")
+    public ResponseEntity<User> deleteUser(@PathVariable("id") long id) {
+        Optional<User> user = userService.findById(id);
+        if (!user.isPresent()) {
+            return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
+        }
+        userService.deleteUserById(id);
+        return new ResponseEntity<User>(HttpStatus.NO_CONTENT);
     }
 }
