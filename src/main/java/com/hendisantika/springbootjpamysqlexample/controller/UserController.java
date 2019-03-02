@@ -79,4 +79,14 @@ public class UserController {
         userService.deleteUserById(id);
         return new ResponseEntity<User>(HttpStatus.NO_CONTENT);
     }
+
+    @PatchMapping(value = "/{id}", headers = "Accept=application/json")
+    public ResponseEntity<User> updateUserPartially(@PathVariable("id") long id, @RequestBody User currentUser) {
+        Optional<User> user = userService.findById(id);
+        if (!user.isPresent()) {
+            return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
+        }
+        User usr = userService.updatePartially(currentUser, id);
+        return new ResponseEntity<User>(usr, HttpStatus.OK);
+    }
 }
