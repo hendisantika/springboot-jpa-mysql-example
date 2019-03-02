@@ -1,0 +1,231 @@
+{
+  "info": {
+    "_postman_id": "5de2643c-0c99-4eb9-b688-781cce07723a",
+    "name": "Spring Data JPA MySQL Example",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get User By Id",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"name\" : \"Uzumaki Naruto\",\n\t\"country\" : \"Konohagakure\"\n} "
+        },
+        "url": {
+          "raw": "http://localhost:8080/users/4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "users",
+            "4"
+          ]
+        },
+        "description": "Get User By Id"
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Users",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"name\" : \"Uzumaki Naruto\",\n\t\"country\" : \"Konohagakure\"\n} "
+        },
+        "url": {
+          "raw": "http://localhost:8080/users/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "users",
+            "all"
+          ]
+        },
+        "description": "Get All Users"
+      },
+      "response": []
+    },
+    {
+      "name": "Add New User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"name\" : \"Uchiha Sasuke\",\n\t\"country\" : \"Konohagakure\"\n} "
+        },
+        "url": {
+          "raw": "http://localhost:8080/users/create",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "users",
+            "create"
+          ]
+        },
+        "description": "Add New User"
+      },
+      "response": []
+    },
+    {
+      "name": "Update Full Data User",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"id\": 3,\n\t\"name\" : \"Hatake Kakashi\",\n\t\"country\" : \"Konohagakure\"\n} "
+        },
+        "url": {
+          "raw": "http://localhost:8080/users/update",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "users",
+            "update"
+          ]
+        },
+        "description": "Update Full Data User"
+      },
+      "response": []
+    },
+    {
+      "name": "Update Data User Partially",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"name\" : \"Haruno Sakura\",\n\t\"country\" : \"Konohagakure\"\n} "
+        },
+        "url": {
+          "raw": "http://localhost:8080/users/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "users",
+            "2"
+          ]
+        },
+        "description": "Update Data User Partially"
+      },
+      "response": []
+    },
+    {
+      "name": "Delete User by Id",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"name\" : \"Uzumaki Naruto\",\n\t\"country\" : \"Konohagakure\"\n} "
+        },
+        "url": {
+          "raw": "http://localhost:8080/users/4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "users",
+            "4"
+          ]
+        },
+        "description": "Delete User by Id"
+      },
+      "response": []
+    }
+  ]
+}
